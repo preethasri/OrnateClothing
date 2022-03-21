@@ -1,0 +1,85 @@
+*{
+    --primary-color: #b92b40;
+}
+
+.footer-container{
+    display: flex;
+    background-color: rgb(39, 39, 39);
+    color:white;
+    
+}
+.footer-left{
+    flex:1;
+    display: flex;
+    flex-direction: column;
+    padding:20px;
+}
+.footer-brand-name{
+    font-size: 1.5rem;
+    color:var(--primary-color)
+}
+.footer-brand-description{
+    margin:20px 0px;
+}
+.footer-social-media-links{
+    display: flex;
+}
+.social-media-icon{
+    width:40px;
+    height:40px;
+    border-radius: 50%;
+    color:white;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+}
+#twitter-icon{
+    background-color: #00ACEE;
+    font-size: 2rem;
+
+}
+#linkedin-icon{
+  background-color: #0E76A8;
+  font-size: 2rem;
+}
+#github-icon{
+    background-color: blueviolet;
+    font-size: 2rem;
+
+}
+.footer-center{
+    flex:1;
+    padding:20px
+}
+.footer-links{
+    margin-bottom: 30px;
+}
+.footer-links-list{
+    margin:0;
+    padding:0;
+    list-style: none;
+    display: flex;
+    flex-wrap:wrap;
+}
+.footer-list-item{
+    width:50%;
+    margin-bottom:10px;
+}
+.footer-right{
+    padding:20px;
+    flex:1;
+    
+}
+.contact{
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    
+    
+}
+.contact-detail{
+    padding-top: 20px;
+}

@@ -1,12 +1,14 @@
 import "./App.css";
-import {Routes,Route} from 'react-router-dom'
-
+ import {LandingPage,ProductPage} from "./pages"
+ import{Route,Routes} from 'react-router-dom'
 function App() {
   return (
-    <Routes>
-      
-    </Routes>
+     
+       <Routes>
+         <Route path="/" element={<LandingPage />} />
+         <Route path="/products" element={<ProductPage />} />
+       </Routes>
+  
   );
 }
-
-export default App;
+export default  App;
