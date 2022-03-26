@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+
+    --primary-color: #b92b40;
+    --secondary-color: #F05524;
+    
+}
+
+.navbar-container{
+    height: 60px;
+    background-color: #f1f1f1;
+}
+.navbar-wrapper{
+    padding:0.8rem 1.3rem;
+    display: flex;
+    justify-content: space-between;
+    
+}
+.navbar-left{
+    flex:1;
+    display:flex;
+    align-items: center;
+    justify-content: flex-start;
+    
+}
+.brand-name{
+    font-size: 2rem;
+    font-weight: bold;
+    color:var(--primary-color);
+    
+}
+
+.navbar-center{
+    flex:1;
+   
+}
+.navbar-search{
+  display:flex;
+  align-items: center;
+  border:1px solid lightgray;
+  margin-left: 25px;
+  padding:5px;
+  background-color: white;
+  justify-content: space-between;
+  
+}
+.search-input{
+    border: none;
+}
+#search-icon{
+    font-size: 1.2rem;
+    color:var(--secondary-color);
+}
+.navbar-right{
+    flex:1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.login-btn{
+    font-size: 14px;
+    cursor:pointer;
+    margin-left: 20px;
+    border:none;
+    padding:10px;
+    background-color: #b92b40;
+    color:white;
+}
+.signUp-btn{
+    font-size: 14px;
+    cursor:pointer;
+    margin-left: 20px;
+    border:none;
+    padding: 10px;
+    color:white;
+    background-color: var(--secondary-color);
+}
+#wishlist-icon{
+    font-size: 1rem;
+    cursor:pointer;
+    margin-left: 20px;
+
+}
+#cart-icon{
+    font-size: 1rem;
+    cursor:pointer;
+    margin-left: 20px;
+}
+
