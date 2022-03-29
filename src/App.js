@@ -5,7 +5,7 @@ function App() {
   return (
      
        <Routes>
-         <Route path="/" element={<LandingPage />} />
+         <Route path="/landingPage" element={<LandingPage />} />
          <Route path="/products" element={<ProductPage />} />
        </Routes>
   

@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    --product-name: #ff2020;
+    --primary-color: #e72744;
+    --secondary-color: #F05524;
+    --primary-btn: #6495ED;
+    --bg-color: #f1f1f1;
+    --black-color: #000000;
+    --white-color: #ffffff;
+}
+
+
+
+
+
+/* filters */
+
+.filter-container {
+    padding-top: 30px;
+    margin-right: auto;
+    line-height: 30px;
+    padding-left: 1.3rem;
+
+}
+.filter-header h2,.clear-btn {
+    display: inline-block;
+    
+}
+
+.clear-btn {
+    all: unset;
+    margin-left:60px;
+    border-bottom:1px solid black;
+}
+
+
+
+/* media queries */
+
+@media only screen and (min-width: 1200px) {
+    .filter-container {
+        width: 250px;
+    }
+  
+}
+
+@media only screen and (max-width:900px) {
+   
+    .filter-container {
+        display: none;
+    }
+    
+}
+
