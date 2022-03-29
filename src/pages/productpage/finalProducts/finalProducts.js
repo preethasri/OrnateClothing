@@ -25,7 +25,7 @@ export default function FinalProducts(){
     const newProducts = filterByRange(ratedProducts, range);
    
     return (
-      <div className="products">
+      <div >
         {error && <h1>{error}</h1>}
         <div className="products">
           <div className="product-grid-container">
