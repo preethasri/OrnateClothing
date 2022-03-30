@@ -19,7 +19,7 @@ const ProductProvider=({children})=>{
                setError('')
                const res= await axios.get("/api/products")
                setProducts(res.data.products)
-
+             
            }
            catch(err){
                setError(err.message)
@@ -28,6 +28,7 @@ const ProductProvider=({children})=>{
        }
       getProducts()
    },[])
+  
     return(
         <ProductContext.Provider value={{products,error}}>
             {children}

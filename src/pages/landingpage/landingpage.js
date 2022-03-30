@@ -4,7 +4,7 @@ import Categories from '../../components/categories/Categories'
 import Footer from '../../components/footer/footer'
 import TopProducts from '../../components/topproductcs/topproducts'
 
-
+import "../../components/topproductcs/topproducts.css"
 
 import {useProduct} from '../../context/product-context'
 
@@ -22,8 +22,8 @@ import {useProduct} from '../../context/product-context'
         <div className="top-products-container">
           <h2>Best selling Products</h2>
           {productError && <div>{productError}</div>}
-          <div className='products'>
-            <div className='product-grid-container'>
+          <div className='top-products'>
+            <div className='top-products-grid-container'>
             {topProducts.map(({_id,title,image,ratings,price})=>(
               <TopProducts key={_id} title={title} image={image} ratings={ratings} price={price} />
             ))}

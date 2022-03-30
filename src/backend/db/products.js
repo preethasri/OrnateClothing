@@ -10,7 +10,7 @@ export const products = [
     _id: uuid(),
     title: "black shirt",
     image:"/assets/productImages/blackshirt.png",
-    price: "700",
+    price: "400",
     categoryName: "men",
     ratings:"4.0",
     isTopSelling:true
@@ -38,7 +38,7 @@ export const products = [
     _id: uuid(),
     title: "black shoe",
     image:"/assets/productImages/blackshoe.png",
-    price: "900",
+    price: "300",
     categoryName: "shoe",
     ratings:"4.6",
     isTopSelling:false
@@ -56,7 +56,7 @@ export const products = [
     _id: uuid(),
     title: "brownhat",
     image:"/assets/productImages/brownhat.png",
-    price: "800",
+    price: "100",
     categoryName: "hat",
     ratings:"3.5",
     isTopSelling:false
@@ -76,7 +76,7 @@ export const products = [
     image:"/assets/productImages/lightblueshirt.png",
     price: "750",
     categoryName: "men",
-    ratings:"3.7",
+    ratings:"1.7",
     isTopSelling:false
   },
   {
@@ -88,15 +88,7 @@ export const products = [
     ratings:"4.5",
     isTopSelling:true
   },
-  {
-    _id: uuid(),
-    title: "roundedcollarshirt",
-    image:"/assets/productImages/roundedcollarshirt.png",
-    price: "950",
-    categoryName: "men",
-    ratings:"4.0",
-    isTopSelling:false
-  },
+  
   {
     _id: uuid(),
     title: "royal blue shirt",
@@ -112,8 +104,17 @@ export const products = [
     image:"/assets/productImages/handbag.png",
     price: "1000",
     categoryName: "handbag",
-    ratings:"3.9",
+    ratings:"2.9",
     isTopSelling:true
+  },
+  {
+    _id: uuid(),
+    title: "pink shirt",
+    image:"/assets/productImages/pinkshirt.png",
+    price: "550",
+    categoryName: "women",
+    ratings:"3.9",
+    isTopSelling:false
   },
 
 ];
