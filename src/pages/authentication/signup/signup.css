@@ -1,0 +1,71 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    --product-name: #ff2020;
+    --primary-color: #e72744;
+    --secondary-color: #F05524;
+    --primary-btn: #6495ED;
+}
+
+
+.form {
+    padding: 20px;
+    border: 1px solid gray;
+    width: 30%;
+    margin: 50px auto 0;
+    border-radius: 12px;
+}
+
+.sign-up-form {
+    margin: 0 auto;
+}
+
+.sign-up-form input {
+    width: 90%;
+    padding: 0.5rem;
+    margin: 5px 0 22px 0px;
+    font-size: 16px;
+}
+
+#toggle-password {
+    margin-left: -30px;
+    cursor: pointer;
+}
+
+.sign-up {
+    border: none;
+    padding: 1rem;
+    background-color: var(--primary-color);
+    border-radius: 5px;
+    color: white;
+}
+
+.login-form-info {
+    text-align: center;
+    margin: 1rem;
+}
+
+.login-form-link {
+    text-decoration: none;
+    padding: 1rem;
+    border: none;
+    background-color: var(--secondary-color);
+    color: white;
+    border-radius: 5px;
+    margin: 1rem 0;
+}
+
+@media only screen and (max-width:700px) {
+    
+    .form {
+        width: 90%;
+    }
+    .sign-up-form input {
+        padding: 5px;
+        font-size: 16px;
+    }
+    
+}
+
