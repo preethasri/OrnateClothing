@@ -4,9 +4,7 @@ import "./index.css";
 import App from "./App";
 import { BrowserRouter  } from "react-router-dom";
 import { makeServer } from "./server";
-import {CategoryProvider} from './context/category-context'
-import {ProductProvider} from './context/product-context'
-import {FilterProvider} from './context/filter-context'
+import {CategoryProvider,ProductProvider,FilterProvider,AuthProvider} from './context/index'
  
 // Call make Server
 makeServer();
@@ -15,6 +13,7 @@ ReactDOM.render(
 
   <React.StrictMode>
     <BrowserRouter>
+      <AuthProvider>
       <CategoryProvider>
         <FilterProvider>
         <ProductProvider>
@@ -25,6 +24,7 @@ ReactDOM.render(
        </FilterProvider>
 
       </CategoryProvider>
+      </AuthProvider>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById("root")
