@@ -43,7 +43,7 @@ export default function Slider(){
                            <div className="info-slide">
                                <div className="info-title">Summer Sale</div>
                                <div className="info-description">Don't miss the sale .Discount for 30%. </div>
-                               <Link to="/products" className="shop-now-btn">Shop Now</Link>
+                               <Link to="/productpage" className="shop-now-btn">Shop Now</Link>
                            </div>
                           
                        </Slide>
