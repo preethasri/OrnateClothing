@@ -8,6 +8,9 @@
     --secondary-color: #F05524;
     
 }
+.link-tag{
+    text-decoration: none;
+}
 
 .navbar-container{
     height: 60px;
@@ -24,12 +27,17 @@
     display:flex;
     align-items: center;
     justify-content: flex-start;
+    margin:0 -15px;
     
+}
+.navbar-left .nav-item i{
+    margin-left: 20px;
 }
 .brand-name{
     font-size: 2rem;
     font-weight: bold;
     color:var(--primary-color);
+    
     
 }
 
@@ -48,7 +56,8 @@
   
 }
 .search-input{
-    border: none;
+    all:unset;
+    flex:1;
 }
 #search-icon{
     font-size: 1.2rem;
@@ -58,7 +67,22 @@
     flex:1;
     display: flex;
     justify-content: flex-end;
+    margin:0 -5px;
+    
+    
+}
+.nav-item{
+    display: flex;
+    flex-direction: column;
     align-items: center;
+    margin:0 5px;
+    
+}
+.nav-item span{
+    color:black;
+}
+.nav-item i{
+    color:black;
 }
 .login-btn{
     font-size: 14px;
@@ -68,6 +92,9 @@
     padding:10px;
     background-color: #b92b40;
     color:white;
+}
+.logout-icon{
+    all:unset;
 }
 .signUp-btn{
     font-size: 14px;
@@ -79,14 +106,32 @@
     background-color: var(--secondary-color);
 }
 #wishlist-icon{
-    font-size: 1rem;
+    font-size:16px;
     cursor:pointer;
-    margin-left: 20px;
+    margin-left: 8px;
+    color:rgb(240, 39, 73);
 
 }
 #cart-icon{
-    font-size: 1rem;
+    font-size: 16px;
     cursor:pointer;
-    margin-left: 20px;
+   color:#F05524;
 }
 
+
+
+.icon-badge {
+    position: relative;
+    text-align: center;
+    display: inline;
+}
+.wishlist-badge {
+    width: 50px;
+    height: 50px;
+    font-size: 12px;
+}
+.cart-badge {
+    width: 50px;
+    height: 50px;
+    font-size: 12px;
+}

@@ -71,8 +71,13 @@
     font-size: 1.3rem;
     color: #000000;
 }
-
-.add-to-wishlist:hover {
+.add-to-wishlist button{
+    all:unset;
+}
+.add-to-wishlist i{
+    color: #000000;
+}
+.add-to-wishlist i:hover {
     color: #e31b23;
 }
 

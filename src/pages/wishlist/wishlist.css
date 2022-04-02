@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    --product-name: #ff2020;
+    --primary-color: #e72744;
+    --secondary-color: #F05524;
+    
+    --bg-color: grey;
+}
+
+.cards{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.horizontal-card {
+    width: 400px;
+    height: 150px;
+    border:1px solid black;
+    display: flex;
+    flex-direction: column;
+    border-radius: 3px;
+    margin: 1.3rem 0;
+}
+
+.horizontal-img-content {
+    display: flex;
+}
+
+.horizontal-img {
+    width: 40%;
+    float: left;
+}
+
+
+
+.horizontal-card-btn {
+    display: flex;
+    justify-content:space-around;
+    margin-top: 10px;
+    
+
+}
+
+;
+.horizontal-card-icons {
+    margin-right: 10px;
+}
+
+.horizontal-card-content{
+    width: 50%;
+
+}
+
+
+.add-to-cart {
+    border: none;
+   background-color: var(--primary-color);
+    font-weight: bold;
+    margin-right: 5px;
+    width:50%;
+    margin-top: 20px;
+    
+}
+
+.remove-from-wishlist {
+    border: none;
+    background-color: var(--secondary-color);
+    font-weight: bold;
+    width:50%;
+    margin-top: 20px;
+
+}
+.btn-primary{
+    padding:10px;
+    font-size: 20px;
+    background-color: #f1f1f1;
+    cursor:pointer;
+    text-decoration: none;
+    color: black;
+    border:1px solid black;
+    margin-top: 20px;
+}
+.wishlist-container {
+    margin-top: 20px;
+    text-align: center;
+}

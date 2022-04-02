@@ -1,18 +1,25 @@
-import "../allproducts/allproducts.css"
-
 import React from 'react'
+import "../allproducts/allproducts.css"
+import { useNavigate } from "react-router-dom"
+import { useWishList } from "../../../context/WishListContext"
+import { addToWishList } from "../../../services/wishListService"
+import { removeFromWishList } from "../../../services/wishListService"
+import { useAuth } from '../../../context/AuthContext'
 export  const AllProducts = ({ product }) => {
-  const{   _id,
-     title,
-     image,
-     price,
-     categoryName,
-     ratings,
-     isTopSelling
-  } =product
-     
-     console.log(title)
-     
+     const{   _id,
+          title,
+          image,
+          price,
+          categoryName,
+          ratings,
+          isTopSelling
+     } =product
+          
+          const {auth:{isAuthenticated,token},}=useAuth()
+          const{wishList,setWishList}=useWishList();
+          const navigate=useNavigate();
+          const isInWishList = productID =>
+    wishList.find(wishlistProduct => wishlistProduct._id === productID);
     return(
             <>
              
@@ -22,7 +29,23 @@ export  const AllProducts = ({ product }) => {
                     <img src={image} alt=""></img>
                </div>
                <div className="add-to-wishlist">
-                    <i className="fa fa-heart"></i>
+                    {isInWishList(_id) ?(
+                         <button  onClick={async () =>
+                              setWishList(await removeFromWishList(token, _id))
+                            }>
+                                  <i className="fa fa-heart" ></i>
+                         </button>
+                    ):(
+                        <button onClick={async () => {
+                         if (isAuthenticated) {
+                           setWishList(await addToWishList(token, product));
+                         } else {
+                           navigate("/login");
+                         }
+                       }}>
+                               <i className="fa fa-heart"></i>
+                        </button>
+                    )}
                </div>
                </div>
 
