@@ -1,5 +1,5 @@
 import "./App.css";
- import {LandingPage,ProductPage,Login,SignUp,Logout,WishList} from "./pages"
+ import {LandingPage,ProductPage,Login,SignUp,Logout,WishList,CartManagement} from "./pages"
  import{Route,Routes} from 'react-router-dom'
 function App() {
   return (
@@ -11,6 +11,7 @@ function App() {
          <Route path="/" element={<SignUp />} />
          <Route path="/logout" element={<Logout />} />
          <Route path="/wishlist" element={<WishList />} />
+         <Route path="/cart" element ={<CartManagement />} />
          
        </Routes>
   
