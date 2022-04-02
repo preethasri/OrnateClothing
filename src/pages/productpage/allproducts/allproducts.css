@@ -75,18 +75,27 @@
     all:unset;
 }
 .add-to-wishlist i{
-    color: #000000;
+    color: red;
 }
 .add-to-wishlist i:hover {
     color: #e31b23;
 }
 
-.add-to-cart {
+.add-to-cart-btn-primary {
     width: 100%;
     padding: 0.5rem;
     background-color: grey;
     color: white;
     border: none;
+}
+.add-to-cart-btn-outline {
+    width: 100%;
+    padding: 0.5rem;
+    background-color: var(--primary-color);
+    border:none;
+    color:white;
+    
+    
 }
 .add-to-cart:hover{
     background-color: #eb2543;

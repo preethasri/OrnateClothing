@@ -5,6 +5,8 @@ import { useWishList } from "../../../context/WishListContext"
 import { addToWishList } from "../../../services/wishListService"
 import { removeFromWishList } from "../../../services/wishListService"
 import { useAuth } from '../../../context/AuthContext'
+import { useCart } from '../../../context/CartContext'
+import { addToCart } from '../../../services/cartService'
 export  const AllProducts = ({ product }) => {
      const{   _id,
           title,
@@ -17,9 +19,15 @@ export  const AllProducts = ({ product }) => {
           
           const {auth:{isAuthenticated,token},}=useAuth()
           const{wishList,setWishList}=useWishList();
+          const {cart,setCart}=useCart();
           const navigate=useNavigate();
-          const isInWishList = productID =>
-    wishList.find(wishlistProduct => wishlistProduct._id === productID);
+          const isInWishList = productId =>
+    wishList.find(wishlistProduct => wishlistProduct._id === productId);
+      
+    const isInCart=productId=>cart.find(cartProduct =>cartProduct._id ===productId)
+                
+   
+   
     return(
             <>
              
@@ -33,7 +41,7 @@ export  const AllProducts = ({ product }) => {
                          <button  onClick={async () =>
                               setWishList(await removeFromWishList(token, _id))
                             }>
-                                  <i className="fa fa-heart" ></i>
+                                  <i className="fas fa-heart" ></i>
                          </button>
                     ):(
                         <button onClick={async () => {
@@ -43,14 +51,31 @@ export  const AllProducts = ({ product }) => {
                            navigate("/login");
                          }
                        }}>
-                               <i className="fa fa-heart"></i>
+                               <i className="far fa-heart"></i>
                         </button>
                     )}
                </div>
                </div>
 
                <div className="add-to-cart-container">
-               <button className="add-to-cart">Add To Cart</button>
+                   {
+                       isInCart(_id) ?(
+                            <button className='add-to-cart-btn-outline' onClick={()=>navigate("/cart")}>
+                               Go To Cart
+                            </button>
+                       ):(
+                            <button className='add-to-cart-btn-primary' onClick={async()=>{
+                                 if(isAuthenticated){
+                                      setCart(await addToCart(token,product))
+                                 }else{
+                                      navigate("/login")
+                                 }
+                            }}>
+                                Add To Cart
+                            </button>
+                       )
+
+                   }
                </div>
                <div className="product-content">
                <div className="product-name">

@@ -2,12 +2,14 @@ import "../navbar/navbar.css"
 import {Link,useNavigate} from 'react-router-dom';
 import { useAuth } from "../../context/AuthContext";
 import { useWishList} from "../../context/WishListContext";
+import { useCart } from "../../context/CartContext";
 import LogOutHandler from "../../services/logoutService";
 export default function Navbar() {
     
     const navigate=useNavigate;
     const {auth:{isAuthenticated,user}}=useAuth()
     const {wishList}=useWishList()
+    const {cart}=useCart()
     return (
       <div>
           <div className='navbar-container'>
@@ -41,7 +43,7 @@ export default function Navbar() {
                     
                           <Link to="/login" className="link-tag" >
                               <div>
-                                <i className="fa fa-sign-in"></i>
+                              <i class="fas fa-sign-in-alt"></i>
                                 </div>
                                 <span>Login</span>
                                 
@@ -52,7 +54,7 @@ export default function Navbar() {
                               <Link to="/logout" className="link-tag">
                               <div>
                                 <button onClick={LogOutHandler} className="logout-icon">
-                                <i className="fa fa-sign-out" aria-hidden="true"></i>
+                                <i className="fas fa-sign-out-alt" aria-hidden="true"></i>
                                 </button>
                               </div>
                               <span>Logout</span>
@@ -64,8 +66,8 @@ export default function Navbar() {
                           <Link to={isAuthenticated ? "/wishlist":"/login"} className="link-tag">
                         <div>
                           <div className="icon-badge">
-                           <i className="fa fa-heart" id="wishlist-icon"></i>
-                           {wishList.length !==0&&(
+                           <i className="fas fa-heart" id="wishlist-icon"></i>
+                           {wishList.length >0&&(
                                 <span className="wishlist-badge">{wishList.length}</span>
                                 
                            )}
@@ -80,9 +82,10 @@ export default function Navbar() {
                           <Link to={isAuthenticated ? "/cart":"/login"} className="link-tag">
                               <div>
                           <div className="icon-badge">
-                           <i className="fa fa-shopping-cart" id="cart-icon"></i>
-                           
-                                <span className="cart-badge"></span>
+                           <i className="fas fa-shopping-cart" id="cart-icon"></i>
+                           {cart.length >0 &&(
+                                <span className="cart-badge">{cart.length}</span>
+                           )}
                                 </div>
                                 </div>
                                 <span>cart</span>

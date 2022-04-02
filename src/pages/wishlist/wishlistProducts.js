@@ -4,7 +4,8 @@ import {useAuth} from '../../context/AuthContext'
 import {useWishList} from '../../context/WishListContext'
 import "../wishlist/wishlist.css"
 import {removeFromWishList} from '../../services/wishListService'
-
+import { useCart } from '../../context/CartContext'
+import { addToCart } from '../../services/cartService'
 const WishListProducts=({product})=>{
     const {_id,title,image,price}=product
     const {
@@ -12,6 +13,9 @@ const WishListProducts=({product})=>{
     }=useAuth();
     const {setWishList}=useWishList();
     const navigate=useNavigate();
+    const{cart,setCart}=useCart();
+    const isInCart=productId=>cart.find(cartProduct =>cartProduct._id ===productId)
+                
     return(
         <>
            
@@ -28,7 +32,20 @@ const WishListProducts=({product})=>{
                             price:{price}
                         </div>
                         <div className="horizontal-card-btn">
-                        <button className="add-to-cart">add to cart</button>
+                        {
+                         isInCart(_id) ?(
+                            <button className='nav-cart-outline' onClick={()=>navigate("/cart")}>
+                               Go To Cart
+                            </button>
+                       ):(
+                            <button className='nav-cart-primary' onClick={async()=>{
+                                 
+                                      setCart(await addToCart(token,product))
+                                 
+                            }}>Add To Cart </button>
+                       )
+
+                   }
                         <button className="remove-from-wishlist" onClick={async () =>
                 setWishList(await removeFromWishList(token, _id))
               }>Remove from wishlist</button>
