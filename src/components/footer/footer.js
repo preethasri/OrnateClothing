@@ -9,13 +9,22 @@ export default function Footer(){
                        <div className="footer-brand-description">Ornate is a best place to buy high quality products at affordable prices. </div>
                        <div className="footer-social-media-links">
                            <div className="social-media-icon">
-                           <i className="fa-brands fa-twitter" id="twitter-icon"></i>
+                           <a href="https://github.com/preethasri" class="primary-links" target="blank">
+                                <i className="fa-brands fa-github" id="github-icon"></i>
+                                </a>
+                      
                            </div>
                            <div className="social-media-icon">
-                           <i className="fa-brands fa-github" id="github-icon"></i>
+                           <a href="https://twitter.com/Preethasri6" class="primary-links" target="blank">
+                                  <i className="fa-brands fa-twitter" id="twitter-icon"></i>
+                                </a>
+                           
                            </div>
                            <div className="social-media-icon">
-                           <i className="fa-brands fa-linkedin" id="linkedin-icon"></i>
+                           <a href="https://www.linkedin.com/in/preetha-s-2a9637217/" class="primary-links" target="blank">
+                                    <i className="fa-brands fa-linkedin" id="linkedin-icon"></i>
+                                </a>
+                          
                            </div>
                        </div>
 

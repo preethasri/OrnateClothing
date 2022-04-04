@@ -13,7 +13,7 @@ export const products = [
     price: "400",
     categoryName: "men",
     ratings:"4.0",
-    isTopSelling:true
+    isTopSelling:false
 
   },
   {
@@ -23,7 +23,7 @@ export const products = [
     price: "800",
     categoryName: "women",
     ratings:"4.2",
-    isToSelling:true
+    isToSelling:false
   },
   {
     _id: uuid(),
@@ -59,7 +59,7 @@ export const products = [
     price: "100",
     categoryName: "hat",
     ratings:"3.5",
-    isTopSelling:false
+    isTopSelling:true
   },
   {
     _id: uuid(),
@@ -96,7 +96,7 @@ export const products = [
     price: "1050",
     categoryName: "men",
     ratings:"4.4",
-    isTopSelling:false
+    isTopSelling:true
   },
   {
     _id: uuid(),
@@ -105,7 +105,7 @@ export const products = [
     price: "1000",
     categoryName: "handbag",
     ratings:"2.9",
-    isTopSelling:true
+    isTopSelling:false
   },
   {
     _id: uuid(),

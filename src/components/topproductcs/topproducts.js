@@ -7,13 +7,10 @@ export default function TopProducts({ title, image,price,ratings,}){
     
     return(
         <div>
-           
-            
-                
-                 <div className="top-products-card">
+              <div className="top-products-card">
                      <div className="top-products-imgandwishlist">
                          <div className="top-products-img-bg">
-                             <img src={image} alt=""></img>
+                             <img src={image} alt={title}></img>
      
                          </div>
      

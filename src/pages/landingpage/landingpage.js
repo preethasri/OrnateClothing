@@ -21,6 +21,7 @@ import {useProduct} from '../../context/product-context'
         <Categories />
         <div className="top-products-container">
           <h2>Best selling Products</h2>
+          </div>
           {productError && <div>{productError}</div>}
           <div className='top-products'>
             <div className='top-products-grid-container'>
@@ -30,7 +31,7 @@ import {useProduct} from '../../context/product-context'
             </div>
           </div>
           
-        </div>
+        
        
         <Footer />
     </div>
