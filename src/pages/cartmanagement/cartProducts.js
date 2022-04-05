@@ -15,9 +15,9 @@ const CartProducts=({product})=>{
     const isInWishList = productId =>
     wishList.find(wishlistProduct => wishlistProduct._id === productId);
     return (
-        <div>
+        <>
        
-          <div className="cart-management">
+        
           <div className="cart-products">
             <div className="imganddetails">
             <div className="cart-product-image">
@@ -68,9 +68,9 @@ const CartProducts=({product})=>{
                </div>
             </div>
             </div>
+            
             </div>
-            </div>
-              </div>
+              </>
               
     )
 

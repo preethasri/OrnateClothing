@@ -14,7 +14,7 @@ export default function CategoryItem({categoryName,categoryImage,}){
                        <div className="category-name">
                            {categoryName}
                        </div>
-                       <button className="category-shop-now-btn">Shop Now</button>
+                       
                    </div>
                    
 
