@@ -22,12 +22,13 @@ const ProductProvider=({children})=>{
                setError('')
                const res= await axios.get("/api/products")
                setProducts(res.data.products)
-               setLoader(flase)
+               setLoader(false)
              
            }
            catch(err){
-            setLoader(false)
+        
                setError(err.message)
+               setLoader(false)
 
            }
        }

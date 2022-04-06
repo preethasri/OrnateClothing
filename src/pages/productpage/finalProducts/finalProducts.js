@@ -29,16 +29,16 @@ export default function FinalProducts(){
         {loader && <div class="loader"></div>}
         <div className="products">
           <div className="product-grid-container">
-         { newProducts.filter(eachProduct => {
+         { newProducts.filter(product => {
                 if(searchTerm === ""){
-                  return eachProduct
-                }else if(eachProduct.title.toLowerCase().includes(searchTerm.toLowerCase())){
-                  return eachProduct
+                  return product
+                }else if(product.title.toLowerCase().includes(searchTerm.toLowerCase())){
+                  return product
                 }
-              }).map((eachProduct) => {
+              }).map((product) => {
             return (
               <div>
-            <AllProducts product={eachProduct} key={eachProduct._id} />
+            <AllProducts product={product} key={product._id} />
             </div>
             )
            
