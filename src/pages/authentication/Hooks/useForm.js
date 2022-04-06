@@ -8,11 +8,13 @@ const useForm=()=>{
 
 
 
-const formHandler=(e)=>{
+const formHandler=()=>{
+    
     const name=e.target.name;
     const value=e.target.value;
     validateForm(name,value);
     setFormData({...formData,[name]:value});
+
 }
 const validateForm=(name,value)=>{
     switch(name){

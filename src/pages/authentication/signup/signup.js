@@ -45,8 +45,9 @@ function SignUp(){
                user:res.data.createdUser,
                token:res.data.encodedToken,
            }))
-           navigate(`/landingpage`)
-           toast(`welcome ${formData.name}`,toastProps)
+           navigate(`/`)
+           toast(`welcome user`,toastProps)
+           
         }
     }
         catch(error){
@@ -57,37 +58,36 @@ function SignUp(){
     return(
         <div>
             <Navbar />
-             <form action="">
+             <form  action="" onSubmit={signupHandler}>
         <div className="form">
             <div className="sign-up-form">
                 <h2>Create Account</h2>
                 <label for="firstName">Name
         <input type="text"
         placeholder="enter your name" 
-        name='name'
-    
-        onChange={formHandler}
-        required />
+        required
+        name='firstname' 
+        onChange={formHandler} 
+         />
        </label>
 
             
                 <label for="email-id">Email-id
         <input type="text" 
         placeholder="enter your mail address" 
+        required
         name="email-id" 
-        
         onChange={formHandler}
-
-        required  />
+         />
        </label>
                 <label for="password">Password
         <input 
         placeholder="enter your password" 
-        name="password" 
+        name="password"
+        required 
         type={passwordToggle.type}
-        onChange={formHandler}
-
-        required />
+        onChange={formHandler} 
+         />
         {passwordToggle.isEyeIcon ? (<i className="fa fa-eye" id="eye-icon"  onClick={togglePassword} aria-hidden="true"></i>) :(<i className="fa fa-eye-slash" id="eye-icon-slash" onClick={togglePassword} aria-hidden="true"></i>)}
         <br></br>
        </label>
@@ -96,15 +96,15 @@ function SignUp(){
         
         placeholder="confirm your password" 
         name="confirmPassword" 
+        required
         id="confirmPassword"
         type={confirmPasswordToggle.type}
-        onChange={formHandler}
-
-        required />
+        onChange={formHandler} 
+         />
         {confirmPasswordToggle.isEyeIcon ? (<i className="fa fa-eye" id="eye-icon"  onClick={confirmTogglePassword} aria-hidden="true"></i>) :(<i className="fa fa-eye-slash" id="eye-icon-slash" onClick={confirmTogglePassword} aria-hidden="true"></i>)}
         {error.isMatch && <span className="error">{error.isMatch}</span>}
        </label>
-                <button className="sign-up" onClick={signupHandler}>Continue
+                <button className="sign-up"  type='submit'>Continue
       </button>
             </div>
         </div>

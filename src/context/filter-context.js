@@ -1,5 +1,5 @@
 import {createContext} from 'react'
-import {useContext,useReducer} from 'react'
+import {useContext,useReducer,useState} from 'react'
 
 import { FilterReducer } from '../reducers/filterReducer'
 
@@ -9,7 +9,9 @@ const useFilter=()=> useContext(FilterContext)
 
 
 const FilterProvider=({children})=>{
+  const[searchTerm,setSearchTerm]=useState('')
     const [
+      
         {
         sortBy,
         category:{men,women,hat,shoe,handbag},
@@ -33,7 +35,7 @@ const FilterProvider=({children})=>{
     })
    return(
 
-    <FilterContext.Provider value= {{sortBy,men,women,hat,shoe,handbag,rating,range,productsDispatch}}>
+    <FilterContext.Provider value= {{searchTerm,setSearchTerm,sortBy,men,women,hat,shoe,handbag,rating,range,productsDispatch}}>
         {children}
 
     </FilterContext.Provider>

@@ -4,12 +4,34 @@ import { useAuth } from "../../context/AuthContext";
 import { useWishList} from "../../context/WishListContext";
 import { useCart } from "../../context/CartContext";
 import LogOutHandler from "../../services/logoutService";
+import { useState } from "react";
+import { useProduct } from "../../context/product-context";
+import { useFilter } from "../../context/filter-context";
+
 export default function Navbar() {
-    
-    const navigate=useNavigate;
+
+    const  {setSearchTerm}=useFilter();
+    const navigate=useNavigate();
+    const[inputKey,setInputKey]=useState("")
     const {auth:{isAuthenticated,user}}=useAuth()
     const {wishList}=useWishList()
     const {cart}=useCart()
+   
+   console.log(inputKey)
+   const searchHandler = () => {
+    if (setSearchTerm === "") {
+      return;
+    } else {
+      setSearchTerm(inputKey);
+      if (inputKey === "") {
+        return;
+      } else {
+        setInputKey("");
+        navigate("/productpage");
+      }
+    }
+  };
+    
     return (
       <div>
           <div className='navbar-container'>
@@ -31,8 +53,17 @@ export default function Navbar() {
                   </div>
                   <div className='navbar-center'>
                       <div className='navbar-search'>
-                       <input className='search-input' placeholder='search for products...'></input>
+                       <input className='search-input' placeholder='search for products...' type="search"
+                          value={inputKey}
+                          onChange={(event) => setInputKey(event.target.value)}
+                       />
+                      
+                      <button className="search-btn" onClick={() => searchHandler()}>
                        <i className="fa fa-search"  id="search-icon" aria-hidden="true"></i>
+                        
+                      </button>
+                       
+                       
                    
                       </div>
                   </div>

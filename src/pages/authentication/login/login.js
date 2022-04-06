@@ -50,7 +50,7 @@ function Login(){
                 user:response.data.foundUser,
                 token:response.data.encodedToken
             }))
-            navigate("/landingpage")
+            navigate("/")
             toast("loggedIn Successfully",toastProps)
        
         }

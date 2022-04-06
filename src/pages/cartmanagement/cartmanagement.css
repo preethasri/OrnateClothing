@@ -156,7 +156,7 @@
   }
   
     .imganddetails{
-      width:100%;
+      width:90%;
       height:300px;
       margin:1rem auto;
     
@@ -176,13 +176,23 @@
       } 
       .product-info{
         font-size:10px;
+        margin-right: 5rem;
         }
         .product-details .product-quantity{
   
           width:45%;
         
       }
-      
+      .product-details .product-name{
+        margin-right: 3rem;
+      }
+      .wishlist-and-cart{
+         flex-direction: column;
+      }
+      .remove-from-cart,.remove-from-wishlist,.move-to-wishlist{
+           width:60%;
+           margin-right: 10rem;
+      }
       }
   @media only screen and (max-width:1300px) {
     .price-details{
