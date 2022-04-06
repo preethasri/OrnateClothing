@@ -19,7 +19,7 @@ const CartProducts=({product})=>{
        
         
           <div className="cart-products">
-            <div className="imganddetails">
+            <div className="img-and-details">
             <div className="cart-product-image">
               <img src={image} alt={title}></img>
             </div>

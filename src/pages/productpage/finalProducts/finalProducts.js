@@ -11,9 +11,9 @@ import {filterByCategory,sortByPrice,sortByRating,filterByRange} from '../sortan
 import {useProduct} from '../../../context/product-context'
 export default function FinalProducts(){
 
-    const {products,error}=useProduct()
+    const {products,loader}=useProduct()
 
-    const {sortBy,men,women,hat,shoe,handbag,rating,range  } =useFilter()
+    const {sortBy,men,women,hat,shoe,handbag,rating,range  ,searchTerm} =useFilter()
     
 
     const filteredProducts = filterByCategory(
@@ -26,11 +26,16 @@ export default function FinalProducts(){
    
     return (
       <div >
-        {error && <h1>{error}</h1>}
+        {loader && <div class="loader"></div>}
         <div className="products">
           <div className="product-grid-container">
-        {newProducts &&
-          newProducts.map((product) => {
+         { newProducts.filter(product => {
+                if(searchTerm === ""){
+                  return product
+                }else if(product.title.toLowerCase().includes(searchTerm.toLowerCase())){
+                  return product
+                }
+              }).map((product) => {
             return (
               <div>
             <AllProducts product={product} key={product._id} />

@@ -7,6 +7,8 @@ import { removeFromWishList } from "../../../services/wishListService"
 import { useAuth } from '../../../context/AuthContext'
 import { useCart } from '../../../context/CartContext'
 import { addToCart } from '../../../services/cartService'
+import { toast } from 'react-toastify'
+
 export  const AllProducts = ({ product }) => {
      const{   _id,
           title,
@@ -26,7 +28,7 @@ export  const AllProducts = ({ product }) => {
       
     const isInCart=productId=>cart.find(cartProduct =>cartProduct._id ===productId)
                 
-   
+   const {toastProps}=useAuth();
    
     return(
             <>
@@ -40,13 +42,16 @@ export  const AllProducts = ({ product }) => {
                     {isInWishList(_id) ?(
                          <button  onClick={async () =>
                               setWishList(await removeFromWishList(token, _id))
+                              
                             }>
+
                                   <i className="fas fa-heart" ></i>
                          </button>
                     ):(
                         <button onClick={async () => {
                          if (isAuthenticated) {
                            setWishList(await addToWishList(token, product));
+                           toast(`${product.title} added to wishlist`,toastProps)
                          } else {
                            navigate("/login");
                          }
@@ -67,6 +72,7 @@ export  const AllProducts = ({ product }) => {
                             <button className='add-to-cart-btn-primary' onClick={async()=>{
                                  if(isAuthenticated){
                                       setCart(await addToCart(token,product))
+                                      toast(`${product.title} added to cart`,toastProps)
                                  }else{
                                       navigate("/login")
                                  }

@@ -2,6 +2,7 @@
 
 function FilterReducer(state,action){
     const{men,women,hat,handbag,shoe}=state.category;
+    
     switch(action.type){
         case "LOW_TO_HIGH":
             return{...state,sortBy:"LOW_TO_HIGH"};
