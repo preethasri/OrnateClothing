@@ -58,7 +58,7 @@ export default function Navbar() {
                           onChange={(event) => setInputKey(event.target.value)}
                        />
                       
-                      <button className="search-btn" onClick={() => searchHandler()}>
+                      <button className="search-btn" onClick={() => searchHandler}>
                        <i className="fa fa-search"  id="search-icon" aria-hidden="true"></i>
                         
                       </button>

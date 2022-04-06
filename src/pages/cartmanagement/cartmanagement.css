@@ -32,7 +32,7 @@
     
   }
   
-  .imganddetails{
+  .img-and-details{
     display:flex;
   width:800px;
   height:280px;
@@ -155,7 +155,7 @@
       margin-top:5px;
   }
   
-    .imganddetails{
+    .img-and-details{
       width:90%;
       height:300px;
       margin:1rem auto;

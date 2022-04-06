@@ -105,11 +105,7 @@ function Login(){
             <button className="sign-up-button">create your Ornate account</button>
         </Link>
        
-        <p>or</p>
-        <Link to="/logout">
-            <button className="log-out-button">Log out</button>
-        </Link>
-
+        
     
     </div>
     <Footer />

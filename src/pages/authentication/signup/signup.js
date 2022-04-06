@@ -58,7 +58,7 @@ function SignUp(){
     return(
         <div>
             <Navbar />
-             <form  action="" onSubmit={signupHandler}>
+             <form   onSubmit={signupHandler}>
         <div className="form">
             <div className="sign-up-form">
                 <h2>Create Account</h2>
