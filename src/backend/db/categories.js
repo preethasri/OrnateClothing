@@ -33,10 +33,6 @@ export const categories = [
     categoryName: "Shoes",
     image:"/assets/categoryImages/shoe.jpg",
   },
-  {
-    _id: uuid(),
-    categoryName: "EyeGlasses",
-    image:"/assets/categoryImages/specs.jpg",
-  },
+ 
 ]
 

@@ -68,9 +68,11 @@
     font-size: 1.3rem;
     color: #000000;
 }
-
-.top-products-add-to-wishlist:hover {
-    color: #e31b23;
+.top-products-add-to-wishlist button{
+    all:unset;
+}
+.top-products-add-to-wishlist i {
+    color: red
 }
 
 .top-products-add-to-cart {

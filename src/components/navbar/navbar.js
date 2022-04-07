@@ -7,6 +7,7 @@ import LogOutHandler from "../../services/logoutService";
 import { useState } from "react";
 import { useProduct } from "../../context/product-context";
 import { useFilter } from "../../context/filter-context";
+import { AddressContainer } from "../addressManagement/addressContainer";
 
 export default function Navbar() {
 
@@ -31,6 +32,7 @@ export default function Navbar() {
       }
     }
   };
+  
     
     return (
       <div>
@@ -70,7 +72,7 @@ export default function Navbar() {
                   <div className='navbar-right'>
                     
                       {!isAuthenticated ?(
-                            <div className="nav-item">
+                          <div className="nav-item">
                     
                           <Link to="/login" className="link-tag" >
                               <div>
@@ -81,19 +83,41 @@ export default function Navbar() {
                           </Link>
                         </div>
                       ):(
-                          <div className="nav-item">
-                              <Link to="/logout" className="link-tag">
-                              <div>
-                                <button onClick={LogOutHandler} className="logout-icon">
-                                <i className="fas fa-sign-out-alt" aria-hidden="true"></i>
-                                </button>
-                              </div>
-                              <span>Logout</span>
-                             </Link>
+                        <div className="nav-item">
+                    
+                        
+                                                <div className="dropdown">
+                            <div className="dropdown-nav-right">
+                              <button className="dropdown-btn">
+                                <div >
+                                <Link to="/login" className="link-tag" >
+                                <i className="fa fa-user"></i></Link>
+                                </div>
+                                <span>user</span>
+                                
+                              </button>
+                            <div className="dropdown-list">
+                              <Link to="/address" className="link-tag">
+                               <button className="dropdown-menu">address</button>
+                               </Link>
+                               <Link to="/user" className="link-tag">
+                               <button  className="dropdown-menu">profile</button>
+                              </Link>
+                               <Link to="/logout" className="link-tag">
+                               <button onClick={LogOutHandler} className="dropdown-menu">logout</button>
+                               </Link>
+                             
+                              
                             </div>
+                              
+                            </div>
+                          </div>
+                              
+                        
+                      </div> 
 
                       )}
-                      <div className="nav-item">
+                       <div className="nav-item">
                           <Link to={isAuthenticated ? "/wishlist":"/login"} className="link-tag">
                         <div>
                           <div className="icon-badge">

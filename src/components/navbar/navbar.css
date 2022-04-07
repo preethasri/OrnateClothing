@@ -147,6 +147,44 @@
     right: -18px;
     top:-5px;
 }
+/* dropdown */
+
+  .dropdown{
+    float:right;
+    overflow:hidden;
+  }
+  .dropdown-btn{
+      border:none;
+      font-size:1rem;
+  }
+  
+  .dropdown-list{
+    display:none;
+    position:absolute;
+    min-width:160px;
+    box-shadow:0 4px 8px black;
+    z-index:1;
+  
+    
+  }
+ .dropdown-list .dropdown-menu{
+     background-color: none;
+     all:unset;
+    float:none;
+    padding:12px 16px;
+    text-decoration:none;
+    display:block;
+    text-align:left;
+    color:black;
+    border:none;
+  }
+  .dropdown-list .dropdown-menu:hover{
+    background-color:crimson;
+    color:white;
+  }
+  .dropdown:hover .dropdown-list{
+    display:block;
+  }
 @media only screen and (max-width:700px){
     .navbar-search{
         display:none;
