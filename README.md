@@ -21,7 +21,7 @@ product page:
                filter by price
                filter by range
                filter by category
-               filter by sort
+             sort
      *product listing card
 Wishlist page
       *add to cart feature
