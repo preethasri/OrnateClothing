@@ -1,6 +1,6 @@
 import React from 'react'
 import "../allproducts/allproducts.css"
-import { useNavigate } from "react-router-dom"
+import { useNavigate ,Link} from "react-router-dom"
 import { useWishList } from "../../../context/WishListContext"
 import { addToWishList } from "../../../services/wishListService"
 import { removeFromWishList } from "../../../services/wishListService"
@@ -16,7 +16,8 @@ export  const AllProducts = ({ product }) => {
           price,
           categoryName,
           ratings,
-          isTopSelling
+          isTopSelling,
+          id
      } =product
           
           const {auth:{isAuthenticated,token},}=useAuth()
@@ -27,7 +28,7 @@ export  const AllProducts = ({ product }) => {
     wishList.find(wishlistProduct => wishlistProduct._id === productId);
       
     const isInCart=productId=>cart.find(cartProduct =>cartProduct._id ===productId)
-                
+       console.log(_id)         
    const {toastProps}=useAuth();
    
     return(
@@ -36,7 +37,9 @@ export  const AllProducts = ({ product }) => {
                <div className="product-card">
                <div className="imgandwishlist">
                <div className="img-bg">
+               <Link to={`/products/${id}`}>
                     <img src={image} alt=""></img>
+                    </Link>
                </div>
                <div className="add-to-wishlist">
                     {isInWishList(_id) ?(

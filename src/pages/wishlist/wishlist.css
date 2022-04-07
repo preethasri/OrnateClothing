@@ -62,22 +62,26 @@
 
 
 .nav-cart-outline{
-    width: 90%;
+    width: 100%;
     padding: 0.5rem;
     background-color: var(--primary-color);
     color: white;
     border: none;
     display: inline;
     margin:0.8rem;
+    margin:0 auto;
+    margin-bottom: 15px;
 }
 .nav-cart-primary{
-    width: 90%;
+    width: 100%;
     padding: 0.5rem;
     background-color:grey;
     color: white;
     border: none;
     display: inline;
     margin:0.8rem;
+    margin:0 auto;
+    margin-bottom: 15px;
 }
 
 
@@ -101,7 +105,7 @@
 }
 @media only screen and (max-width:700px){
     .horizontal-card{
-        max-width: 100%;
+        width: 100%;
     }
     .horizontal-card-btn{
         flex-direction: column;

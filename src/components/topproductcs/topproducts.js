@@ -1,6 +1,6 @@
 
 import '../topproductcs/topproducts.css'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate,Link } from 'react-router-dom'
 import { useWishList } from '../../context/WishListContext'
 import { addToWishList,removeFromWishList } from '../../services/wishListService'
 import { useAuth } from '../../context/AuthContext'
@@ -8,7 +8,7 @@ import { useCart } from '../../context/CartContext'
 import { addToCart } from '../../services/cartService'
 import { toast } from 'react-toastify'
 export default function TopProducts({product}){
-    const { title, image,price,ratings,_id}=product
+    const { title, image,price,ratings,_id,id}=product
     const {auth:{isAuthenticated,token},}=useAuth()
     const{wishList,setWishList}=useWishList();
     const {cart,setCart}=useCart();
@@ -25,8 +25,9 @@ const {toastProps}=useAuth();
               <div className="top-products-card">
                      <div className="top-products-imgandwishlist">
                          <div className="top-products-img-bg">
+                         <Link to={`/products/${id}`}>
                              <img src={image} alt={title}></img>
-     
+                         </Link>
                          </div>
      
                          <div className="top-products-add-to-wishlist">

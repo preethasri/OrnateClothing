@@ -13,7 +13,8 @@ export const products = [
     price: "400",
     categoryName: "men",
     ratings:"4.0",
-    isTopSelling:false
+    isTopSelling:false,
+    description:"Lorem ipsum is a name for a common type of placeholder text. Also known as filler or dummy text, this is simply text copy that serves to fill a space without actually saying anything meaningful."
 
   },
   {
@@ -23,7 +24,8 @@ export const products = [
     price: "800",
     categoryName: "women",
     ratings:"4.2",
-    isToSelling:false
+    isToSelling:false,
+    description:"Lorem ipsum is a name for a common type of placeholder text. Also known as filler or dummy text, this is simply text copy that serves to fill a space without actually saying anything meaningful."
   },
   {
     _id: uuid(),
@@ -32,7 +34,8 @@ export const products = [
     price: "1000",
     categoryName: "shoe",
     ratings:"3.8",
-    isTopSelling:true
+    isTopSelling:true,
+    description:"Lorem ipsum is a name for a common type of placeholder text. Also known as filler or dummy text, this is simply text copy that serves to fill a space without actually saying anything meaningful."
   },
   {
     _id: uuid(),
@@ -41,7 +44,8 @@ export const products = [
     price: "300",
     categoryName: "shoe",
     ratings:"4.6",
-    isTopSelling:false
+    isTopSelling:false,
+    description:"Lorem ipsum is a name for a common type of placeholder text. Also known as filler or dummy text, this is simply text copy that serves to fill a space without actually saying anything meaningful."
   },
   {
     _id: uuid(),
@@ -50,7 +54,8 @@ export const products = [
     price: "600",
     categoryName: "shoe",
     ratings:"2.9",
-    isTopSelling:false
+    isTopSelling:false,
+    description:"Lorem ipsum is a name for a common type of placeholder text. Also known as filler or dummy text, this is simply text copy that serves to fill a space without actually saying anything meaningful."
   },
   {
     _id: uuid(),
@@ -59,7 +64,8 @@ export const products = [
     price: "100",
     categoryName: "hat",
     ratings:"3.5",
-    isTopSelling:true
+    isTopSelling:true,
+    description:"Lorem ipsum is a name for a common type of placeholder text. Also known as filler or dummy text, this is simply text copy that serves to fill a space without actually saying anything meaningful."
   },
   {
     _id: uuid(),
@@ -68,7 +74,8 @@ export const products = [
     price: "1100",
     categoryName: "men",
     ratings:"4.1",
-    isTopSelling:false
+    isTopSelling:false,
+    description:"Lorem ipsum is a name for a common type of placeholder text. Also known as filler or dummy text, this is simply text copy that serves to fill a space without actually saying anything meaningful."
   },
   {
     _id: uuid(),
@@ -77,7 +84,8 @@ export const products = [
     price: "750",
     categoryName: "men",
     ratings:"1.7",
-    isTopSelling:false
+    isTopSelling:false,
+    description:"Lorem ipsum is a name for a common type of placeholder text. Also known as filler or dummy text, this is simply text copy that serves to fill a space without actually saying anything meaningful."
   },
   {
     _id: uuid(),
@@ -86,7 +94,8 @@ export const products = [
     price: "1200",
     categoryName: "women",
     ratings:"4.5",
-    isTopSelling:true
+    isTopSelling:true,
+    description:"Lorem ipsum is a name for a common type of placeholder text. Also known as filler or dummy text, this is simply text copy that serves to fill a space without actually saying anything meaningful."
   },
   
   {
@@ -96,7 +105,8 @@ export const products = [
     price: "1050",
     categoryName: "men",
     ratings:"4.4",
-    isTopSelling:true
+    isTopSelling:true,
+    description:"Lorem ipsum is a name for a common type of placeholder text. Also known as filler or dummy text, this is simply text copy that serves to fill a space without actually saying anything meaningful."
   },
   {
     _id: uuid(),
@@ -105,7 +115,8 @@ export const products = [
     price: "1000",
     categoryName: "handbag",
     ratings:"2.9",
-    isTopSelling:false
+    isTopSelling:false,
+    description:"Lorem ipsum is a name for a common type of placeholder text. Also known as filler or dummy text, this is simply text copy that serves to fill a space without actually saying anything meaningful."
   },
   {
     _id: uuid(),
@@ -114,7 +125,8 @@ export const products = [
     price: "550",
     categoryName: "women",
     ratings:"3.9",
-    isTopSelling:false
+    isTopSelling:false,
+    description:"Lorem ipsum is a name for a common type of placeholder text. Also known as filler or dummy text, this is simply text copy that serves to fill a space without actually saying anything meaningful."
   },
 
 ];

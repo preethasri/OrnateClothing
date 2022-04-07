@@ -1,5 +1,5 @@
 import "./App.css";
- import {LandingPage,ProductPage,Login,SignUp,Logout,WishList,CartManagement} from "./pages"
+ import {LandingPage,ProductPage,Login,SignUp,Logout,WishList,CartManagement,SingleProductPage} from "./pages"
  import { AddressContainer } from "./components/addressManagement/addressContainer";
  import{Route,Routes} from 'react-router-dom'
 import { UserProfilePage } from "./components/userprofilepage/userprofile";
@@ -16,6 +16,7 @@ function App() {
          <Route path="/cart" element ={<CartManagement />} />
          <Route path="/address" element={<AddressContainer />}/>
          <Route path="/user" element={<UserProfilePage />}/>
+         <Route path="products/:productId" element={<SingleProductPage />} />
          
        </Routes>
   

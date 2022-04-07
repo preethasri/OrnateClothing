@@ -8,6 +8,7 @@ export default function CategoryItem({categoryName,categoryImage}){
         <div>
             <div className="categoryItem-container" onClick={()=>navigateToCategory({categoryName})} >
                      <div className="category-img">
+                     
                         <img src={categoryImage} className="category-image" ></img>
                     </div>
 
