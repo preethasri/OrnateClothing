@@ -68,9 +68,40 @@
 
 }
 .delete-btn{
-    color:whit;
+    
     background-color: #f1f1f1;
     padding:0.8rem 1rem;
     border:none;
 
+}
+@media only screen and (max-width:700px){
+  .address-list{
+     width:100%;
+     
+     text-align:center;
+  }
+  .address-form{
+    width:100%;
+    text-align: center;
+    grid-template-columns: 300px;
+    height:80vh;
+  }
+  .saveBtn{
+    width: 80%;
+    padding: 0.5rem;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    margin-top: 10px;
+    margin:0 auto;
+  }
+  .cancelBtn{
+    width: 80%;
+    padding: 0.5rem;
+    background-color: grey;
+    border:none;
+    color:white;
+    margin:0 auto;
+    margin-top: 10px;
+  }
 }

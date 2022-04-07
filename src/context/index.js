@@ -1,8 +1,8 @@
 
 
-export {CategoryProvider} from './category-context'
-export {FilterProvider} from './filter-context'
-export {ProductProvider} from './product-context'
-export {AuthProvider} from './AuthContext'
-export {WishListProvider} from './WishListContext'
-export {CartProvider} from './CartContext'
+export {CategoryProvider,useCategory} from './category-context'
+export {FilterProvider,useFilter} from './filter-context'
+export {ProductProvider,useProduct} from './product-context'
+export {AuthProvider,useAuth} from './AuthContext'
+export {WishListProvider,useWishList} from './WishListContext'
+export {CartProvider,useCart} from './CartContext'

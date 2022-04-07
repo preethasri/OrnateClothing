@@ -84,12 +84,14 @@ function AddressForm({
             ))}
           </select>
         </div>
+    
         <button className="saveBtn" type="submit">
           Save
         </button>
         <button className="cancelBtn" onClick={() => onCancelClick()}>
           Cancel
         </button>
+        
       </form>
     </section>
   );

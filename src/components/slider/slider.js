@@ -54,7 +54,7 @@ export default function Slider(){
                            <div className="info-slide">
                                <div className="info-title">Wedding sale</div>
                                <div className="info-description">flat 20% off for wedding suits </div>
-                                 <Link to="/products" className="shop-now-btn">Shop Now</Link>
+                                 <Link to="/productpage" className="shop-now-btn">Shop Now</Link>
                            </div>
                           
                        </Slide>
@@ -65,7 +65,7 @@ export default function Slider(){
                            <div className="info-slide">
                                <div className="info-title">Winter Sale</div>
                                <div className="info-description">products price starts at just Rs.499</div>
-                               <Link to="/products" className="shop-now-btn">Shop Now</Link>
+                               <Link to="/productpage" className="shop-now-btn">Shop Now</Link>
                            </div>
                            
                        </Slide>

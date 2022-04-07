@@ -60,7 +60,7 @@ export default function Navbar() {
                           onChange={(event) => setInputKey(event.target.value)}
                        />
                       
-                      <button className="search-btn" onClick={() => searchHandler}>
+                      <button className="search-btn" onClick={() => searchHandler()}>
                        <i className="fa fa-search"  id="search-icon" aria-hidden="true"></i>
                         
                       </button>
@@ -90,8 +90,8 @@ export default function Navbar() {
                             <div className="dropdown-nav-right">
                               <button className="dropdown-btn">
                                 <div >
-                                <Link to="/login" className="link-tag" >
-                                <i className="fa fa-user"></i></Link>
+                              
+                                <i className="fa fa-user"></i>
                                 </div>
                                 <span>user</span>
                                 

@@ -85,13 +85,14 @@ function SignUp(){
         placeholder="enter your password" 
         name="password"
         required 
+        id="password"
         type={passwordToggle.type}
         onChange={formHandler} 
          />
         {passwordToggle.isEyeIcon ? (<i className="fa fa-eye" id="eye-icon"  onClick={togglePassword} aria-hidden="true"></i>) :(<i className="fa fa-eye-slash" id="eye-icon-slash" onClick={togglePassword} aria-hidden="true"></i>)}
         <br></br>
        </label>
-                <label for="confirm-password" className="confirm-password">Confirm-password
+                <label for="confirmPassword" className="confirm-password">Confirm-password
         <input 
         
         placeholder="confirm your password" 
@@ -102,7 +103,9 @@ function SignUp(){
         onChange={formHandler} 
          />
         {confirmPasswordToggle.isEyeIcon ? (<i className="fa fa-eye" id="eye-icon"  onClick={confirmTogglePassword} aria-hidden="true"></i>) :(<i className="fa fa-eye-slash" id="eye-icon-slash" onClick={confirmTogglePassword} aria-hidden="true"></i>)}
+       <div>
         {error.isMatch && <span className="error">{error.isMatch}</span>}
+        </div>
        </label>
                 <button className="sign-up"  type='submit'>Continue
       </button>
@@ -112,7 +115,7 @@ function SignUp(){
     <div className="login-form-info">
         <span>Already have an account? 
         <Link to="/login" >
-            <button className="login-form-link">Login</button>
+            <button className="login-form-link" onClick={signupHandler}>Login</button>
         </Link>
         </span>
     </div>
