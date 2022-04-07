@@ -11,7 +11,7 @@ import { useForm } from '../Hooks/useForm'
 import {  toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-
+import {AddressContainer} from "../../../components/addressManagement/addressContainer"
  
 function SignUp(){
     toast.configure();
@@ -116,6 +116,9 @@ function SignUp(){
         </Link>
         </span>
     </div>
+    <button onClick={()=>navigate("/address")}>
+         address
+    </button>
     <div>
         <Footer />
         </div>

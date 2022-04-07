@@ -25,8 +25,10 @@ import {useProduct} from '../../context/product-context'
           {productError && <div>{productError}</div>}
           <div className='top-products'>
             <div className='top-products-grid-container'>
-            {topProducts.map(({_id,title,image,ratings,price})=>(
-              <TopProducts key={_id} title={title} image={image} ratings={ratings} price={price} />
+            {topProducts.map((product)=>(
+             
+              <TopProducts product={product} />
+              
             ))}
             </div>
           </div>
