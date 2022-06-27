@@ -2,7 +2,7 @@ import axios from 'axios';
 import {createContext} from 'react'
 import {useContext,useState,useEffect} from 'react'
 import {useAuth} from './AuthContext'
-
+import { clearCartService } from '../services/cartService';
 const CartContext=createContext();
 
 const useCart=()=>useContext(CartContext)
@@ -32,8 +32,24 @@ const CartProvider=({children})=>{
             setCart([])
         }
     },[isAuthenticated,token])
+    const clearCart=async()=>{
+        try{
+            const {status,data}=await axios.post("/api/user/cart/clearCart",
+            {},
+            {headers:{authorization:token}})
+
+            if(status===201){
+                return response.data.cart
+            }
+
+        }
+        catch(err){
+            console.log(err)
+        }
+    }
     return(
-        <CartContext.Provider value={{cart,setCart}}>
+
+        <CartContext.Provider value={{cart,setCart,clearCart}}>
             {children}
         </CartContext.Provider>
     )

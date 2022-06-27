@@ -7,6 +7,7 @@ import { useAuth } from '../../context/AuthContext'
 import { useCart } from '../../context/CartContext'
 import { addToCart } from '../../services/cartService'
 import { toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
 export default function TopProducts({product}){
     const { title, image,price,ratings,_id,id}=product
     const {auth:{isAuthenticated,token},}=useAuth()

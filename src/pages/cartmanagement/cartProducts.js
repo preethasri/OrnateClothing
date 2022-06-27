@@ -26,8 +26,9 @@ const CartProducts=({product})=>{
             <div className="product-details">
               <span className="product-name">{title}</span>
               <span className="product-info">{categoryName}</span>
+              
               <span  className="product-info">
-             
+            
                   <span> ₹{price} × {qty} </span>
                   <span>₹{price * qty} </span>
               </span>

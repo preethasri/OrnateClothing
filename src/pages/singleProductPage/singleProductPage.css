@@ -74,3 +74,44 @@
     color:var(--primary-color);
     font-size: 1.2rem;
 }
+.horizontal-card-heading{
+    font-size:2rem;
+    font-weight: bold;
+    color:black;
+    text-decoration: none;
+}
+.horizontal-card-para{
+    font-size:1rem;
+    
+    color:black;
+    text-decoration: none;
+}
+.order-container{
+    border:1px solid black;
+}
+.text-success{
+    color:green;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+.order-amount{
+    color:red;
+}
+.text-semibold{
+    font-weight: bold;
+    
+}
+.order-card{
+    max-width: 800px;
+    width:100%;
+    height:min-content;
+    border:1px solid black;
+    display: flex;
+    flex-direction: column;
+    border-radius: 3px;
+    margin: 1.3rem 0;
+    line-height: 26px;
+}
+.horizontal-card-content{
+    height:min-content;
+}

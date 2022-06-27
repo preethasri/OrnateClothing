@@ -1,5 +1,5 @@
 import "../navbar/navbar.css"
-import {Link,useNavigate} from 'react-router-dom';
+import {Link,useNavigate,useLocation} from 'react-router-dom';
 import { useAuth } from "../../context/AuthContext";
 import { useWishList} from "../../context/WishListContext";
 import { useCart } from "../../context/CartContext";
@@ -7,18 +7,21 @@ import LogOutHandler from "../../services/logoutService";
 import { useState } from "react";
 import { useProduct } from "../../context/product-context";
 import { useFilter } from "../../context/filter-context";
-import { AddressContainer } from "../addressManagement/addressContainer";
+import { UserOrders } from "../../pages/UserOrder/UserOrder";
+import { toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function Navbar() {
 
     const  {setSearchTerm}=useFilter();
     const navigate=useNavigate();
     const[inputKey,setInputKey]=useState("")
-    const {auth:{isAuthenticated,user}}=useAuth()
+    const {auth:{isAuthenticated,user},setAuth,toastProps}=useAuth()
     const {wishList}=useWishList()
     const {cart}=useCart()
+    const {pathname}=useLocation()
    
-   console.log(inputKey)
+   
    const searchHandler = () => {
     if (setSearchTerm === "") {
       return;
@@ -53,6 +56,7 @@ export default function Navbar() {
                       </Link>
                       </div>
                   </div>
+                  {pathname === "/productpage" && (
                   <div className='navbar-center'>
                       <div className='navbar-search'>
                        <input className='search-input' placeholder='search for products...' type="search"
@@ -69,6 +73,7 @@ export default function Navbar() {
                    
                       </div>
                   </div>
+                  )}
                   <div className='navbar-right'>
                     
                       {!isAuthenticated ?(
@@ -87,28 +92,23 @@ export default function Navbar() {
                     
                         
                                                 <div className="dropdown">
-                            <div className="dropdown-nav-right">
-                              <button className="dropdown-btn">
-                                <div >
-                              
-                                <i className="fa fa-user"></i>
-                                </div>
-                                <span>user</span>
-                                
-                              </button>
-                            <div className="dropdown-list">
-                              <Link to="/address" className="link-tag">
-                               <button className="dropdown-menu">address</button>
-                               </Link>
-                               <Link to="/user" className="link-tag">
-                               <button  className="dropdown-menu">profile</button>
-                              </Link>
-                               <Link to="/logout" className="link-tag">
-                               <button onClick={LogOutHandler} className="dropdown-menu">logout</button>
-                               </Link>
-                             
-                              
-                            </div>
+                            <div className="nav-item">
+                              <div>
+                            <button className='dropdown-btn' onClick={()=>{
+                                  LogOutHandler();
+                                  setAuth({
+                                      isAuthenticated:false,
+                                      user:"",
+                                      token:"",
+                                  })
+                                  toast("loggedOut Successfully",toastProps)
+                                  navigate("/")
+                              }}>
+                                   <i class="fas fa-sign-out-alt"></i>
+                                   </button>
+                                   </div>
+                                   <span>Logout</span>
+                            
                               
                             </div>
                           </div>

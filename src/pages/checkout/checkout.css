@@ -1,0 +1,38 @@
+.address-radio {
+    display: flex;
+    
+    gap: 1rem;
+    cursor: pointer;
+    border: 2px solid #f1f1f1;
+    border-radius: 5px;
+    padding: 1rem;
+    margin-bottom: 5px;
+  }
+  .address-radio input[type="checkbox"] {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  .new-address-btn {
+    all:unset;
+    background: #f1f1f1;
+	padding: 8px 15px 8px 15px;
+	border: none;
+	color: black;
+    margin:5px;
+   
+  
+  }
+  .new-address-btn:hover {
+    background-color:var(--primary-color);
+    color:white;
+  }
+  .address-cards {
+    flex: 1 0 200px;
+    justify-content: center;
+    flex-direction: column;
+    row-gap: 1.5rem;
+  }
+  .text-decoration-none {
+    text-decoration: none;
+  }
+  

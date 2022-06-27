@@ -5,7 +5,6 @@ import { useNavigate,Link,useParams } from 'react-router-dom'
 import {useAuth,useWishList,useCart,useProduct} from '../../context/index'
 import { addToWishList } from '../../services/wishListService'
 import { addToCart } from '../../services/cartService'
-import  {toast} from 'react-toastify'
 
 
 export const SingleProductPage=()=>{
@@ -15,8 +14,7 @@ export const SingleProductPage=()=>{
       const {auth:{isAuthenticated,token},}=useAuth()
     const{wishList,setWishList}=useWishList();
     const {cart,setCart}=useCart();
-    const {toastProps}=useAuth();
-  
+   
     const singleProduct=products?.find((product)=>product.id===productId)
 
     return(

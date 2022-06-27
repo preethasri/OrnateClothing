@@ -1,5 +1,5 @@
 import "../footer/footer.css"
-
+import { Link } from "react-router-dom"
 export default function Footer(){
     return(
         <div>
@@ -31,17 +31,37 @@ export default function Footer(){
                    </div>
                    <div className="footer-center">
                       <div className="footer-links">Quick Links</div>
-                      <ul className="footer-links-list">
-                          <li className="footer-list-item">Home</li>
-                          <li className="footer-list-item">ProductsPage</li>
-                          <li className="footer-list-item">Wishlist</li>
-                          <li className="footer-list-item">Cart</li>
-                          <li className="footer-list-item">account</li>
-                          <li className="footer-list-item">men</li>
-                          <li className="footer-list-item">Women</li>
-                          <li className="footer-list-item">shoe</li>
-                          <li className="footer-list-item">handbag</li>
-                          <li className="footer-list-item">hat</li>
+                      <ul className="footer-links-list" style={{color:"white"}}>
+                      <Link to="/" className="link-tag footer-list-item">
+                          <li className="footer-list-item" style={{color:"white"}}>Home</li>
+                          </Link>
+                          <Link to="/productpage" className="link-tag footer-list-item">
+                          <li className="footer-list-item " style={{color:"white"}}>ProductsPage</li>
+                          </Link>
+                          <Link to="/wishlist" className="link-tag footer-list-item">
+                          <li className="footer-list-item" style={{color:"white"}}>Wishlist</li>
+                          </Link>
+                          <Link to="/cart" className="link-tag footer-list-item">
+                          <li className="footer-list-item" style={{color:"white"}}>Cart</li>
+                          </Link>
+                          <Link to="/" className="link-tag footer-list-item">
+                          <li className="footer-list-item" style={{color:"white"}}>Categories</li>
+                          </Link>
+                          <Link to="/" className="link-tag footer-list-item">
+                          <li className="footer-list-item" style={{color:"white"}}>men</li>
+                          </Link>
+                          <Link to="/" className="link-tag footer-list-item">
+                          <li className="footer-list-item" style={{color:"white"}}>Women</li>
+                          </Link>
+                          <Link to="/" className="link-tag footer-list-item">
+                          <li className="footer-list-item" style={{color:"white"}}>shoe</li>
+                          </Link>
+                          <Link to="/" className="link-tag footer-list-item">
+                          <li className="footer-list-item" style={{color:"white"}}>Hat</li>
+                          </Link>
+                          <Link to="/" className="link-tag footer-list-item">
+                          <li className="footer-list-item" style={{color:"white"}}>Handbag</li>
+                          </Link>
                       </ul>
                    </div>
                    <div className="footer-right">
