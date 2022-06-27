@@ -41,8 +41,7 @@ const CategoryProvider=({children})=>{
         category.categoryName=="Hat"  && productsDispatch({type:"HAT" ,payload:categories});
         
         
-         console.log(category.categoryName)
-        
+         
         navigate("/productpage");
       };
     return(

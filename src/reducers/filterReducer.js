@@ -63,7 +63,7 @@ function FilterReducer(state,action){
                     handbag:false,
                   },
                     rating:null,
-                    range:0,
+                    range:1500,
           
 
             }

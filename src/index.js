@@ -5,7 +5,7 @@ import App from "./App";
 import { BrowserRouter  } from "react-router-dom";
 import { makeServer } from "./server";
 import {CategoryProvider,ProductProvider,FilterProvider,AuthProvider,WishListProvider,CartProvider} from './context/index'
- 
+ import {AddressProvider,OrderProvider} from './context/index'
 // Call make Server
 makeServer();
 
@@ -19,7 +19,11 @@ ReactDOM.render(
         <ProductProvider>
         <FilterProvider>
   <CategoryProvider>
+    <AddressProvider>
+      <OrderProvider>
   <App />
+  </OrderProvider>
+  </AddressProvider>
   </CategoryProvider>
   </FilterProvider>
   </ProductProvider>

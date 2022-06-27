@@ -15,7 +15,7 @@ import {useProduct} from '../../context/product-context'
   const{products,error:productError}=useProduct()
   const topProducts=products.filter((product)=>product.isTopSelling)
   return(
-    <div>
+    <div className='homepage'>
         <Navbar /> 
         <Slider /> 
         <Categories />

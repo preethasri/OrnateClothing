@@ -34,11 +34,11 @@ const WishListProducts=({product})=>{
                         <div className="horizontal-card-btn">
                         {
                          isInCart(_id) ?(
-                            <button className='nav-cart-outline' onClick={()=>navigate("/cart")}>
+                            <button className='remove-from-cart' onClick={()=>navigate("/cart")}>
                                Go To Cart
                             </button>
                        ):(
-                            <button className='nav-cart-primary' onClick={async()=>{
+                            <button className='move-to-wishlist' onClick={async()=>{
                                  
                                       setCart(await addToCart(token,product))
                                  

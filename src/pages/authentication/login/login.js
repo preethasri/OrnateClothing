@@ -20,8 +20,8 @@ function Login(){
     const {passwordToggle,togglePassword}=useTogglePassword();
     const {setAuth,toastProps}=useAuth();
     const [signinData,setSignInData]=useState({
-        email:"adarshbalika@gmail.com",
-        password:"adarshbalika"
+        email:"chitra12@gmail.com",
+        password:"chitra"
     })
     const navigate=useNavigate();
     const[error,setError]=useState("");
@@ -39,11 +39,11 @@ function Login(){
                 password:signinData.password,
 
             })
-            console.log(response.status)
-            console.log(signinData)
+           
+            if(response.status===200){
             localStorage.setItem("AUTH_TOKEN",response.data.encodedToken);
-            localStorage.setItem("WB_AUTH",JSON.stringify(response.data.foundUser))
-          
+            localStorage.setItem("ornate_user",JSON.stringify(response.data.foundUser))
+            }
             setAuth(prev =>({
                 ...prev,
                 isAuthenticated:true,
@@ -92,7 +92,7 @@ function Login(){
          {passwordToggle.isEyeIcon ? (<i className="fa fa-eye" id="eye-icon"  onClick={togglePassword} aria-hidden="true"></i>) :(<i className="fa fa-eye-slash" id="eye-icon-slash" onClick={togglePassword} aria-hidden="true"></i>)}
 
                 <div className='btns'>
-                    <button onClick={loginHandler} className="sign-in-button-outlined">login with test credentials</button>
+                    <button onClick={loginHandler} className="sign-in-button-outlined">Login With test</button>
                     <button onClick={loginHandler} className="sign-in-button">login</button>
                 </div>
             

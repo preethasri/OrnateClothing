@@ -43,7 +43,7 @@ export default  function Filters(){
         <br></br>
         <div className="slider-for-price">
             <h3>{range}</h3> <br></br>
-            <input type="range" min="100" max="1500" onChange={(e)=>productsDispatch({type:"RANGE",payload:e.target.value})} /><br></br>
+            <input type="range" value={range} min="100" max="1500"   onChange={(e)=>productsDispatch({type:"RANGE",payload:e.target.value})} /><br></br>
         </div>
         <br></br>
         <div className="filter-by-category">

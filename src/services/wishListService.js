@@ -4,35 +4,40 @@ import axios from 'axios';
 
 
 
-export const  addToWishList=async(token,product,toastProps)=>{
-    
-    try{
-        const response=await axios.post('/api/user/wishlist',
-           {product},
-           {headers:{
-               authorization:token,
-           }
-        }
-        )
-        
-      return  response.data.wishlist
-    
+const addToWishList = async (token, product) => {
+    try {
+      const response = await axios.post(
+        "/api/user/wishlist",
+        { product },
+        {
+            headers: {
+              authorization: token,
+            },
+          }
+      );
+      return response.data.wishlist;
+    } catch (error) {
+      console.error("ERROR", error);
+      return error;
     }
-    catch(error){
-        console.log(error)
+  };
+  export { addToWishList };
+  
+  const removeFromWishList = async (token, productID) => {
+    try {
+      const response = await axios.delete(`/api/user/wishlist/${productID}`, 
+      
+      {
+        headers: {
+          authorization: token,
+        },
+      }
+      );
+      return response.data.wishlist;
+    } catch (error) {
+      console.error("ERROR", error);
+      return error;
     }
-}
-export  const removeFromWishList=async(token,productId)=>{
-    
-   
-        try{
-            const response=await axios.delete(`/api/user/wishlist/${productId}`,{
-                headers:{authorization:token},
-            })
-           return response.data.wishlist;
-            
-        }catch(error){
-            console.log(error)
-            return error;
-        }
-    }
+  };
+  export { removeFromWishList };
+  

@@ -11,18 +11,39 @@ import { useForm } from '../Hooks/useForm'
 import {  toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-import {AddressContainer} from "../../../components/addressManagement/addressContainer"
+
  
 function SignUp(){
     toast.configure();
     const {setAuth,toastProps}=useAuth();
     const {passwordToggle,togglePassword,confirmPasswordToggle,confirmTogglePassword}=useTogglePassword()
     
-    const {formData,formHandler,error}=useForm();
+    const [signup,setSignUp]=useState({
+        input:{},
+        error:"",
+        passwordMatch:true,
+        
+    })
+    
+    const signUpInputHandler=(e)=>{
+        const {name,value}=e.target;
+        if (name === "confirmPassword") {
+            setSignUp({
+              ...signup,
+              input: { ...signup.input, [name]: value },
+              passwordMatch: value === signup.input.password ? true : false,
+            });
+          } else {
+            setSignUp({
+              ...signup,
+              input: { ...signup.input, [name]: value },
+            });
+          }
+        };
     let navigate=useNavigate();
 
-    const signupHandler=async(e)=>{
-        e.preventDefault();
+    const signupHandler=async(signup,setSignUp)=>{
+        
         try{
             setAuth({
                 isAuthenticated:false,
@@ -31,14 +52,14 @@ function SignUp(){
             })
             
             const res=await axios.post("/api/auth/signup",{
-               formData
+               signup,setSignUp
 
             })
-            console.log(res.status)
+          
             if(res.status===201){
             localStorage.setItem("AUTH_TOKEN",res.data.encodedToken);
 
-            localStorage.setItem("WB_USER",JSON.stringify(res.data.createdUser))
+            localStorage.setItem("ornate_user",JSON.stringify(res.data.createdUser))
            setAuth(prev =>({
                ...prev,
                isAuthenticated:true,
@@ -54,11 +75,13 @@ function SignUp(){
             console.log(error);
         }
 
+
     }
+   
     return(
         <div>
             <Navbar />
-             <form   onSubmit={signupHandler}>
+             <form   onSubmit={(e)=>e.preventDefault()}>
         <div className="form">
             <div className="sign-up-form">
                 <h2>Create Account</h2>
@@ -66,18 +89,20 @@ function SignUp(){
         <input type="text"
         placeholder="enter your name" 
         required
-        name='firstname' 
-        onChange={formHandler} 
+        name='firstName' 
+        onChange={signUpInputHandler} 
+        value={signup.input.firstName || ""}
          />
        </label>
 
             
-                <label for="email-id">Email-id
+                <label for="email">Email-id
         <input type="text" 
         placeholder="enter your mail address" 
         required
-        name="email-id" 
-        onChange={formHandler}
+        name="email" 
+        onChange={signUpInputHandler} 
+        value={signup.input.email || ""}
          />
        </label>
                 <label for="password">Password
@@ -87,7 +112,8 @@ function SignUp(){
         required 
         id="password"
         type={passwordToggle.type}
-        onChange={formHandler} 
+        onChange={signUpInputHandler} 
+        value={signup.input.password || ""}
          />
         {passwordToggle.isEyeIcon ? (<i className="fa fa-eye" id="eye-icon"  onClick={togglePassword} aria-hidden="true"></i>) :(<i className="fa fa-eye-slash" id="eye-icon-slash" onClick={togglePassword} aria-hidden="true"></i>)}
         <br></br>
@@ -100,14 +126,15 @@ function SignUp(){
         required
         id="confirmPassword"
         type={confirmPasswordToggle.type}
-        onChange={formHandler} 
+        onChange={signUpInputHandler} 
+        value={signup.input.confirmPassword || ""}
          />
         {confirmPasswordToggle.isEyeIcon ? (<i className="fa fa-eye" id="eye-icon"  onClick={confirmTogglePassword} aria-hidden="true"></i>) :(<i className="fa fa-eye-slash" id="eye-icon-slash" onClick={confirmTogglePassword} aria-hidden="true"></i>)}
        <div>
-        {error.isMatch && <span className="error">{error.isMatch}</span>}
+       {!signup.passwordMatch ? (<div className="error">password do not match</div>):null}
         </div>
        </label>
-                <button className="sign-up"  type='submit'>Continue
+                <button className="sign-up"  onClick={()=>{signupHandler(signup,setSignUp)}}>Continue
       </button>
             </div>
         </div>
@@ -115,7 +142,7 @@ function SignUp(){
     <div className="login-form-info">
         <span>Already have an account? 
         <Link to="/login" >
-            <button className="login-form-link" onClick={signupHandler}>Login</button>
+            <button className="login-form-link" >Login</button>
         </Link>
         </span>
     </div>

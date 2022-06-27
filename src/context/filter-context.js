@@ -30,7 +30,7 @@ const FilterProvider=({children})=>{
           handbag:false,
         },
           rating:null,
-          range:0,
+          range:1500,
 
     })
    return(
