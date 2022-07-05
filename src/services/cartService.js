@@ -47,4 +47,3 @@ export const quantityUpdateInCart=async(token,action,productId)=>{
 
 
 
-export {clearCartService}
