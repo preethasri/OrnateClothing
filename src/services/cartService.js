@@ -46,7 +46,5 @@ export const quantityUpdateInCart=async(token,action,productId)=>{
 }
 
 
-const clearCartService=token=>{
-    return axios.post("/api/user/cart/clearCart",{},{headers:{authorization:token}})
-}
+
 export {clearCartService}

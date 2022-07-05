@@ -32,21 +32,18 @@ const CartProvider=({children})=>{
             setCart([])
         }
     },[isAuthenticated,token])
-    const clearCart=async()=>{
-        try{
-            const {status,data}=await axios.post("/api/user/cart/clearCart",
+    const clearCart = async (setcart, token) => {
+        try {
+          const res = await axios.post(
+            "/api/user/cart/clearCart",
             {},
-            {headers:{authorization:token}})
-
-            if(status===201){
-                return response.data.cart
-            }
-
+            { headers: { authorization: token } }
+          );
+          setcart(res.data.cart);
+        } catch (error) {
+          console.error(error);
         }
-        catch(err){
-            console.log(err)
-        }
-    }
+      };
     return(
 
         <CartContext.Provider value={{cart,setCart,clearCart}}>
