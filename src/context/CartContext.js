@@ -2,7 +2,7 @@ import axios from 'axios';
 import {createContext} from 'react'
 import {useContext,useState,useEffect} from 'react'
 import {useAuth} from './AuthContext'
-import { clearCartService } from '../services/cartService';
+
 const CartContext=createContext();
 
 const useCart=()=>useContext(CartContext)
