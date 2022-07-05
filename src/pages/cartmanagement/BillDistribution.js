@@ -9,10 +9,12 @@ import { useLocation,useNavigate } from "react-router-dom";
 import {useOrder,useAddress} from '../../context'
 import dayjs from "dayjs";
 import {compose,offerFunctions,priceCalculator} from './utils'
-
+import { useAuth } from "../../context";
 const BillDistribution =({selectedAddress})=>{
     const[isCouponModalOpen,setIsCouponModalOpen]=useState(false)
-   
+    const {
+      auth:{isAuthenticated,token},
+  }=useAuth();
     const [coupons,setCoupons]=useState(couponsData)
     const {cart,setCart,clearCart}=useCart()
     const {pathname}=useLocation()
@@ -24,7 +26,7 @@ const BillDistribution =({selectedAddress})=>{
     const totalPrice=totalPrices.price+totalPrices.deliverCharges
 
     const finalPrice=compose(...offerFunctions(coupons))(totalPrice)
-
+    
    const loadScript=async url=>{
       return new Promise(resolve =>{
         const script=document.createElement("script")
@@ -53,7 +55,7 @@ const BillDistribution =({selectedAddress})=>{
         name: "",
         description: "Thanks for shopping with us!",
         image: "/assets/favicon.ico",
-        handler: function (response) {
+        handler: async (response) => {
           const paymentId = response.razorpay_payment_id;
           const orderId = uuid();
   
@@ -65,8 +67,11 @@ const BillDistribution =({selectedAddress})=>{
             deliveryAddress: selectedAddress,
             orderedAt: dayjs().format("DD/MM/YYYY hh:mmA"),
           };
+          await clearCart(setCart,token);
+          
           addOrder(newOrders);
-          clearCart();
+          
+          
           navigate("/user/orders");
         },
         theme: {
